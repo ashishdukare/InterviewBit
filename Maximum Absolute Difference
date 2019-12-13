@@ -1,0 +1,25 @@
+int Solution::maxArr(vector<int> &a) 
+{   int max=0,sum1=0,sum2=0;
+    int n = a.size();
+    int b[n],c[n];
+    for(int j=0;j<n;j++)
+    {
+        b[j]=a[j]+j+1;
+        c[j]=a[j]-(j+1);   
+    }
+    sort(b,b+n);
+    sort(c,c+n);
+
+    sum1=b[n-1]-b[0];
+    sum2=c[n-1]-c[0];
+
+    if(sum1>sum2)
+    {
+        max=sum1;
+    }
+    else
+    {
+        max=sum2;
+    }
+    return max;
+}
